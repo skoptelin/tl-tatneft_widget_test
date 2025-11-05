@@ -63,16 +63,9 @@
               //weight: "400"
             }
         },
-        metrics: {
-          id: 102997595,
-          clickButtonPulse: {
-            id: 102997595,
-            goalName: "reachGoal",
-            title: "campBoxButtonPulse"
-          }
-        },
-        text: {
-          minimizedTitle: "Купить путевку",
+        openingButtons: ".booking--button.js-booking-button",
+        mainButton: {
+          hidden: true
         },
       })
     </script>
@@ -554,7 +547,7 @@
     }
 </style>
                             <div class="container-fluid">
-                <div class="row">
+                <div class="row" style="display: flex;justify-content: center;margin-top: 40px;">
                     
         <style type="text/css">
 .booking {
@@ -674,25 +667,9 @@
       width: 100%;
     }
   }</style>
-<!-- start TL Search form script -->
-<div class="booking js-booking">
-	<div class="booking--title">
-		Бронирование смен</div>
-	<div class="booking--input">
-		<span>Смена</span> <select class="booking--select js-booking-dates"><option selected="selected" value="date=2025-10-26&amp;nights=7">Осенняя смена (26 октября — 1 ноября 2025 года)</option></select></div>
-	<button class="booking--button js-booking-button"><span>Забронировать</span></button></div>
-<script>
-  var dateSelect = document.querySelector('.js-booking-dates'),
-      searchBtn = document.querySelector('.js-booking-button');
 
-  function goToBookingUrl() {
-    location.href = "/deti/bronirovanie-dol?" + dateSelect.value + "&hotel_id=26573";
-  }
-
-  searchBtn.addEventListener('click', function () {
-    goToBookingUrl();
-  });
-</script><!-- end TL Search form script -->                </div>
+	<button class="booking--button js-booking-button" style="width: 70%; flex: none !important"><span>Забронировать</span></button>
+               </div>
             </div>
                 <div class="container-fluid subportal main-inner-container">
             <div class="row">
