@@ -30,7 +30,7 @@
         minimized: true, // is collapsed at start
 
         serviceBaseUrl: "https://tlcamp-api.campbox.tech", // url api server dev new
-        campId: "",
+         campId: "84f1d8fe-dc26-49c9-af25-d3fcf2af80c9", // id camp
 
         // serviceBaseUrl: "https://tlcamp-api.campdirector.ru", // api prod
         // campId: "756e6ab4-bf56-4e30-83d6-34ca0f7d0caa", // id camp
@@ -65,21 +65,18 @@
         },
         openingButtons: ".booking--button.js-booking-button",
         mainButton: {
-          //hidden: true
+          hidden: true
         },
         text: {
           searchFormTitle: "Выбор лагеря и смены",
         },
-        camps: {
-            campList: [
-                { id: "5e81c3d3-ba1f-4081-b698-5aef29311b74", label: "Березка" },
-                { id: "84f1d8fe-dc26-49c9-af25-d3fcf2af80c9", label: "Солнечный" },
-                { id: "39500763-74b7-4f1a-9049-f3b78b3abbbd", label: "Вишневая поляна" },
-                { id:"bc95b64e-6868-4b8e-861a-4df58e782ec1", label: "Без смен"}
-            ]
-        }
       })
     </script>
+    <style>
+        #widget-tlc .input-input-DFRc5, #widget-tlc .inputDate-input-hAIlC, #widget-tlc .inputPhone-input-H8IZk {
+            height: 48px !important;
+        }
+    </style>
     
     <script src="https://social.tatneft.ru/js/jquery-1.12.4.min.js"></script>
     <script src="https://social.tatneft.ru/js/main/bootstrap.min.js"></script>
