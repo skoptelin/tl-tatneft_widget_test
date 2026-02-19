@@ -66,6 +66,7 @@
 --b24-primary-hover-color: rgba(0, 173, 107, 0.7);
 				}</style></head>
 <body>
+  
   <script>
     (function (w, d, s, o, f, js, fjs) {
       w[o] = w[o] || function () {
@@ -78,70 +79,86 @@
       fjs.parentNode.insertBefore(js, fjs)
     }(window, document, "script", "tlc", "./widget.js"))
     tlc("init", {
-      debug: false,
-      minimized: true,
-      serviceBaseUrl: "https://tlcamp-api.campdirector.ru",
+      debug: true, // debug mode
+      // idRootElement: "tlc-wrapper", // id of the widget add root element optional
+      // element: el, // HTML element of the widget add root element optional
+      minimized: true, // is collapsed at start
+
+      serviceBaseUrl: "https://tlcamp-api.campbox.tech", // url api server dev new
       campId: "",
+
+      // serviceBaseUrl: "https://tlcamp-api.campdirector.ru", // api prod
+      // campId: "756e6ab4-bf56-4e30-83d6-34ca0f7d0caa", // id camp
       styles: {
           stileInString:
-              "  --color-text-header: #ffff;" +
-              "  --color-button-text: #ffff;" +
+              "  --color-text-header: #ffffff;"  +
+              "  --color-text-sm: #898989;" +
               "  --color-accent: #16ab6d;" +
+              "  --color-error: #cb2431;" +
+              "  --color-bg: #fff;" +
+              "  --color-bg-conatiner: #333333AA;" +
               "  --color-bg-secondary: #16ab6d;" +
+              "  --color-button-text: #ffff;" +
               "  --color-button-fill: #16ab6d;" +
-              "  --color-loader: #16ab6d;" +
+              "  --color-button-line: #ffffff;" +
               "  --color-inputs: #16ab6d;" +
+              "  --color-inputs-text: #000000;" +
+              "  --color-inputs-placeholder: #898989;" +
+              "  --color-inputs-bg: #fff;" +
+              "  --color-loader: #16ab6d;" +
+              "  --border-radius: 3px;" +
               "  --btn-cite-right: 50px;" +
               "  --btn-cite-bottom: 150px;" +
-              "  --btn-mob-cite-bottom: 130px;" +
               "  --btn-cite-top: unset;" +
-              "  --border-radius: 3px;" +
-              "  --font-family: Arial, Helvetica, sans-serif;",
+              "  --btn-cite-index: 99999;" +
+              "  --font-family: Arial, Helvetica, sans-serif;" +
+              "  --btn-mob-cite-bottom: 130px;",
+          font: {
+            name: "Montserrat+Alternates",
+            //weight: "400"
+          }
       },
-      /* text: {
+      openingButtons: ".booking--button.js-booking-button",
+      mainButton: {
+        //hidden: true
+      },
+      text: {
         searchFormTitle: "Выбор лагеря и смены",
-      }, */
-      holdingCompanyId: "33c2eda0-ae57-486c-a21c-ed8b4e05de53",
+      },
+      partner: {
+        //popupOn: true,
+      },
+      holdingCompanyId: "a4d90505-493d-41fc-8b3b-f15209f7fca4",
       camps: {
         campList: [
-            { id: "09b099ea-0604-4824-9033-2a15fdcbe0c6", label: "Солнечный Татнефть" },
-            { id: "4019aee9-ca81-4f2f-9056-67d2262c42b1", label: "Березка Татнефть" },
-            { id: "2ce3f0de-40c7-4701-9d8d-872fc36c2ff1", label: "Факел Татнефть" },
-            { id: "447ac5ad-1bea-402e-9302-21336a508cbc", label: "Ландыш Татнефть" },
-            { id: "fc8b552b-1965-45af-bfc9-53414a30bc24", label: "Юбилейный Татнефть" },
-            { id: "32d7d36a-d352-4cef-8e01-9017b35a86b7", label: "Чайка Татнефть" },
+            { id: "5e81c3d3-ba1f-4081-b698-5aef29311b74", label: "Березка" },
+            { id: "84f1d8fe-dc26-49c9-af25-d3fcf2af80c9", label: "Солнечный" },
+            { id: "39500763-74b7-4f1a-9049-f3b78b3abbbd", label: "Вишневая поляна" },
         ],
         campList1: [
-            { id: "09b099ea-0604-4824-9033-2a15fdcbe0c6", label: "Солнечный Татнефть" },
-            { id: "4019aee9-ca81-4f2f-9056-67d2262c42b1", label: "Березка Татнефть" },
-            { id: "2ce3f0de-40c7-4701-9d8d-872fc36c2ff1", label: "Факел Татнефть" },
-            { id: "447ac5ad-1bea-402e-9302-21336a508cbc", label: "Ландыш Татнефть" },
-            { id: "fc8b552b-1965-45af-bfc9-53414a30bc24", label: "Юбилейный Татнефть" },
-            { id: "32d7d36a-d352-4cef-8e01-9017b35a86b7", label: "Чайка Татнефть" },
+            { id: "5e81c3d3-ba1f-4081-b698-5aef29311b74", label: "Березка" },
+            { id: "84f1d8fe-dc26-49c9-af25-d3fcf2af80c9", label: "Солнечный" },
+            { id: "39500763-74b7-4f1a-9049-f3b78b3abbbd", label: "Вишневая поляна" },
         ],
         campList2: [
-            { id: "4019aee9-ca81-4f2f-9056-67d2262c42b1", label: "Березка Татнефть" },
+            { id: "5e81c3d3-ba1f-4081-b698-5aef29311b74", label: "Березка" },
         ]
       },
       vouchers: {
         visibleIds: {
-          "b4785118-43b0-4819-b9db-e977bfbcdb55": ["c34e0a7a-574c-4fe9-bf42-b1cbef950dad"],
-          "06bdc817-fe5f-4b4e-b6d0-db8800322b0c": ["c015d3aa-5d46-4dd3-9036-98523bb8f5c8"],
-          "8e85a050-4739-4cba-90cf-6b60c06b0045": ["cab24094-2cc4-4b53-abd6-d9d19d81ac7a"],
-          "b817987b-995c-43f9-a9b2-a40a8a73859e": ["bd601950-13a8-4418-aeea-5338b9d25530", "2f0b0688-0355-437e-b2f4-1d979150b1ac"],
-          "bce71155-426d-42d6-86cb-0c9220ed3d66": ["03d30868-5c47-453b-9efa-783559808a22", "0bd2d420-3fbe-4034-8a98-ce770bc09dd8"],
-          "fbd4d3a2-913d-4134-bcb6-cf90916edc9e": ["185d0a23-f4b4-49b2-8690-e65cebbed30b", "fb468a3a-0033-4bdd-88d8-e6ac20aba0df"],
+          "512f136d-ccd3-42af-b1ee-93ba60db16b4": ["7a9a537a-dedb-4a4e-8695-8686f41bae58"],
+          "a5fce82c-a03e-469c-bc80-af0ac22628c6": ["d53d3033-0aef-4983-91bc-e1e04bb2f7f0"],
+          "a62808f1-ef61-4f68-bb87-e3db355693cf": ["ae649582-37ca-44ba-b4fa-e485a8c33c9f"],
         },
         visibleIds1: {
-          "b4785118-43b0-4819-b9db-e977bfbcdb55": ["5de3aee9-07a9-4572-bebb-d86f50b6bfcc"],
-          "06bdc817-fe5f-4b4e-b6d0-db8800322b0c": ["57aaf71c-125b-4bf0-8a2e-83d91cc39bdc"],
-          "8e85a050-4739-4cba-90cf-6b60c06b0045": ["7311b43f-6713-40ca-97d8-e1fdeb820aaa"],
-          "b817987b-995c-43f9-a9b2-a40a8a73859e": ["c16afe27-32eb-47e6-a250-bb244087d789"],
-          "bce71155-426d-42d6-86cb-0c9220ed3d66": ["3a13fb2b-9684-4b4d-b5eb-b4f0e00b41e3"],
-          "fbd4d3a2-913d-4134-bcb6-cf90916edc9e": ["5c08e948-f202-4638-8339-9834f810849f"],
+          "512f136d-ccd3-42af-b1ee-93ba60db16b4": ["e4d7a243-1e04-41d0-9bae-2f60f839ebd5"],
+          "a5fce82c-a03e-469c-bc80-af0ac22628c6": ["28e69aab-92dd-414b-8be6-19c3c3e10a48"],
+          "a62808f1-ef61-4f68-bb87-e3db355693cf": ["1ccd7a70-3a05-4c8a-ac60-d6ee23b7feae"],
         },
         visibleIds2: {
-          "06bdc817-fe5f-4b4e-b6d0-db8800322b0c": ["eef722b4-359c-40e5-bec9-c0e304858ca0"],
+          "512f136d-ccd3-42af-b1ee-93ba60db16b4": ["3ca14bc7-32df-4baf-b164-f17acb802651"],
+          "a5fce82c-a03e-469c-bc80-af0ac22628c6": ["cb25f248-fed0-46d4-98f5-47f5bc9ff82e"],
+          "a62808f1-ef61-4f68-bb87-e3db355693cf": ["4b9c3fa3-4684-4c72-9615-fb61f641aedb"],
         }
       },
     })
